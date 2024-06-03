@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Roboty</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav {
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Wyśrodkowanie zakładek */
+        }
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .content {
+            padding: 20px;
+        }
+        section {
+            display: none;
+            margin-bottom: 20px;
+        }
+        .centered {
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery div {
+            margin: 10px;
+            text-align: center;
+            flex: 1 0 30%; /* Flex basis set to 30% for three items in a row */
+            box-sizing: border-box;
+        }
+        .gallery img {
+            max-width: 100%;
+            max-height: 200px; /* Maksymalna wysokość obrazków */
+            height: auto;
+        }
+        .active {
+            display: block;
+        }
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .gallery div {
+                flex: 1 0 45%; /* Two items in a row for medium screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery div {
+                flex: 1 0 100%; /* One item in a row for small screens */
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll("nav a");
+            const sections = document.querySelectorAll("section");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add("active");
+                        } else {
+                            section.classList.remove("active");
+                        }
+                    });
+                });
+            });
+
+            // Wyświetlanie pierwszej sekcji domyślnie
+            if (sections.length > 0) {
+                sections[0].classList.add("active");
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo-01.png" alt="Logo">
+    </header>
+    <nav>
+        <a href="#wedo2">WeDo 2.0</a>
+        <a href="#wedo2-przedszkola">WeDo 2.0 - Przedszkola</a>
+        <a href="#spike-prime">Spike Prime</a>
+        <a href="#spike-essential">Spike Essential</a>
+        <a href="#spike-essential-przedszkola">Spike Essential - Przedszkola</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="content">
+        <section id="wedo2">
+            <h2>WeDo 2.0</h2>
+            <p>Treść dotycząca WeDo 2.0</p>
+        </section>
+        <section id="wedo2-przedszkola">
+            <h2>WeDo 2.0 - Przedszkola</h2>
+            <p>Treść dotycząca WeDo 2.0 dla przedszkoli</p>
+        </section>
+        <section id="spike-prime" class="active">
+            <h2>Spike Prime</h2>
+            <div class="gallery">
+                <div class="centered">
+                    <img src="Prime/1. Forklift.png" alt="1. Forklift">
+                    <p>1. Forklift</p>
+                    <a href="https://youtu.be/kEb9NikEv84?si=PeUb5bP1O-8sdnO-" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/2. Elephant.png" alt="2. Elephant">
+                    <p>2. Elephant</p>
+                    <a href="https://youtu.be/-J5VPVn1iKw?si=tbZr9j8mm4koF8M_" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/3. Wheel loader.png" alt="3. Wheel loader">
+                    <p>3. Wheel loader</p>
+                    <a href="https://youtu.be/sG-GOxsnR8E?si=AaSU_px77JefMUFV" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/4. Crocodile.png" alt="4. Crocodile">
+                    <p>4. Crocodile</p>
+                    <a href="https://youtu.be/UT2iPMflR_E?si=DTGTymFukeydp_6w" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/5. Walking Robot.png" alt="5. Walking Robot">
+                    <p>5. Walking Robot</p>
+                    <a href="https://youtu.be/1KtQKa_lQTI?si=_EbBrCxPup932LPs" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/6. Goalkeeper.png" alt="6. Goalkeeper">
+                    <p>6. Goalkeeper</p>
+                    <a href="https://youtu.be/Om8LxWXx7XY?si=R0eTsb359JB_7Rmo" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/7. Robot arms.png" alt="7. Robot arms">
+                    <p>7. Robot arms</p>
+                    <a href="https://youtu.be/ZRI0lj893vg?si=FPxRmfMrBzOfCxLq" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/8. Golf.png" alt="8. Golf">
+                    <p>8. Golf</p>
+                    <a href="https://youtu.be/MJARBagMONs?si=Tln9rfK96oht5KfI" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/9. Automobile.png" alt="9. Automobile">
+                    <p>9. Automobile</p>
+                </div>
+                <div class="centered">
+                    <img src="Prime/10. Game machine.png" alt="10. Game machine">
+                    <p>10. Game machine</p>
+                    <a href="https://youtu.be/-SEu9WLoKYo?si=3FAf0K8-tsJ9e5O8" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/11. Spinner.png" alt="11. Spinner">
+                    <p>11. Spinner</p>
+                    <a href="https://youtu.be/ZTdM47Lgmpw?si=HkowWFFp845f3TDV" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/12. Flipper.png" alt="12. Flipper">
+                    <p>12. Flipper</p>
+                    <a href="https://youtu.be/zyPQp8e2jCU?si=8Zz5W9zFFo8fPpZM" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/13. Guitar.png" alt="13. Guitar">
+                    <p>13. Guitar</p>
+                </div>
+                <div class="centered">
+                    <img src="Prime/14. Santa's team.png" alt="14. Santa's team">
+                    <p>14. Santa's team</p>
+                    <a href="https://youtu.be/3ul3tFcHgp8?si=dEZoZkZRBRMR2CS9" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/15. Gunfight.png" alt="15. Gunfight">
+                    <p>15. Gunfight</p>
+                    <a href="https://youtu.be/hiBdyn3juGs?si=fTIws9Y2uVChK_Sl" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/16. Clean robot.png" alt="16. Clean robot">
+                    <p>16. Clean robot</p>
+                    <a href="https://youtu.be/xF5dsbfrrhA?si=X4UhbZ_kTFE0L7At" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/17. Rodeo.png" alt="17. Rodeo">
+                    <p>17. Rodeo</p>
+                    <a href="https://youtu.be/w9Y7MSPr7Us?si=-atuibtQtk75vKF2" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/18. Robotic manipolator.png" alt="18. Robotic manipolator">
+                    <p>18. Robotic manipolator</p>
+                    <a href="https://youtu.be/SyPVkfa0RQw?si=XJr3E-5LGg3PBvsu" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/19. Snake.png" alt="19. Snake">
+                    <p>19. Snake</p>
+                    <a href="https://youtu.be/qEg89yRRRAY?si=n2M5nCIbo56j-T5h" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/20. Painting machine.png" alt="20. Painting machine">
+                    <p>20. Painting machine</p>
+                </div>
+                <div class="centered">
+                    <img src="Prime/21. Train.png" alt="21. Train">
+                    <p>21. Train</p>
+                    <a href="https://youtu.be/-vKqcZQzKP8?si=v0AqDHfQIVqYNjfS" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/22. Helicopter.png" alt="22. Helicopter">
+                    <p>22. Helicopter</p>
+                    <a href="https://youtu.be/28C1iCJWcsU?si=CGa6KqyB0TkybmgD" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/23. Green energy.png" alt="23. Green energy">
+                    <p>23. Green energy</p>
+                    <a href="https://youtu.be/wKOQDHdHQPE?si=su_bsqC7v8vUmqYd" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/24. Spirograph.png" alt="24. Spirograph">
+                    <p>24. Spirograph</p>
+                    <a href="https://youtu.be/0TIh9Xc0tx4?si=pk7uiCtpF9xkUHpc" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/25. Beam balance.png" alt="25. Beam balance">
+                    <p>25. Beam balance</p>
+                    <a href="https://youtu.be/TfrPLkGWsuk?si=3lOl3_LUnbPAshya" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/26. Racer.png" alt="26. Racer">
+                    <p>26. Racer</p>
+                    <a href="https://youtu.be/PsmyfGXzTrA?si=coczM8NvMrR5Tx5I" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/27. Dump truck.png" alt="27. Dump truck">
+                    <p>27. Dump truck</p>
+                    <a href="https://youtu.be/oHyzwSP4oEM?si=hIn2DXt7NOw_aLcn" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/28. Dancer.png" alt="28. Dancer">
+                    <p>28. Dancer</p>
+                    <a href="https://youtu.be/eGFUIwUyOec?si=-CP78iDT_7Y7byUm" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/29. Knight.png" alt="29. Knight">
+                    <p>29. Knight</p>
+                </div>
+                <div class="centered">
+                    <img src="Prime/30. Skier.png" alt="30. Skier">
+                    <p>30. Skier</p>
+                    <a href="https://youtu.be/XrEyEormNvk?si=78c7NVwZnEznfbQx" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/31. Walker robot.png" alt="31. Walker robot">
+                    <p>31. Walker robot</p>
+                    <a href="https://youtu.be/SlKGu5B_fdM?si=sshVN_aPHtwcZnF-" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/32. Exotic fish.png" alt="32. Exotic fish">
+                    <p>32. Exotic fish</p>
+                    <a href="https://youtu.be/7xZdWDnG-DE?si=coFTOViTaToIWLmK" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/33. Garage.png" alt="33. Garage">
+                    <p>33. Garage</p>
+                    <a href="https://youtu.be/Bu741I72x4g?si=SdcSK3Ww2clnXvxV" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/34. Trebuchet.png" alt="34. Trebuchet">
+                    <p>34. Trebuchet</p>
+                    <a href="https://youtu.be/DqFUN15Cguc?si=29VIroW2VX4eNsYh" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/35. Swing.png" alt="35. Swing">
+                    <p>35. Swing</p>
+                    <a href="https://youtu.be/ffDyQ2TwEMY?si=2HAD28GMXalmTJ5z" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/36. Crab.png" alt="36. Crab">
+                    <p>36. Crab</p>
+                    <a href="https://youtu.be/FtEeqVIdizY?si=I9525_UgGmBqz6GS" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/37. Crossbow.png" alt="37. Crossbow">
+                    <p>37. Crossbow</p>
+                    <a href="https://youtu.be/pFOPdlAQzow?si=7RnmHV9h2Etfy8hI" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/38. Bumper car.png" alt="38. Bumper car">
+                    <p>38. Bumper car</p>
+                    <a href="https://youtu.be/CWBQOHOqyN4?si=QmIQqR_H6poJAeEX" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/39. Fishing.png" alt="39. Fishing">
+                    <p>39. Fishing</p>
+                    <a href="https://youtu.be/MGMR_MfMK0U?si=KPqLfllbVgPik3a1" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/40. Halloween.png" alt="40. Halloween">
+                    <p>40. Halloween</p>
+                    <a href="https://youtu.be/BfF4qaLearw?si=HFCKtZ36Q5xhFTPg" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/41. Athlete.png" alt="41. Athlete">
+                    <p>41. Athlete</p>
+                    <a href="https://youtu.be/7lvnfLZ29SA?si=mPhlqrITAfCzj-4C" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/42. Boxer.png" alt="42. Boxer">
+                    <p>42. Boxer</p>
+                    <a href="https://youtu.be/YVmVyOG0DLk?si=tnsoTFYbI2T8oEaH" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/43. Santa Claus.png" alt="43. Santa Claus">
+                    <p>43. Santa Claus</p>
+                    <a href="https://youtu.be/pNCEk7QIDlE?si=TNqQ2cd3Uqd1401z" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/44. Harvester.png" alt="44. Harvester">
+                    <p>44. Harvester</p>
+                    <a href="https://youtu.be/uXv-aveHNII?si=112PksZiMIpbh-nf" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/45. Plane.png" alt="45. Plane">
+                    <p>45. Plane</p>
+                    <a href="https://youtu.be/wFP8oGGgolk?si=l5lTGjsCBrA_7yAL" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/46. Jumping rope.png" alt="46. Jumping rope">
+                    <p>46. Jumping rope</p>
+                    <a href="https://youtu.be/79GFhJihxKM?si=SM7LK7NsWH_f6TcM" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/47. Gun.png" alt="47. Gun">
+                    <p>47. Gun</p>
+                    <a href="https://youtu.be/yQB4sj9RZgE?si=WnyecZ9WYHRePjgN" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/48. Metal detector.png" alt="48. Metal detector">
+                    <p>48. Metal detector</p>
+                </div>
+                <div class="centered">
+                    <img src="Prime/49. Bike.png" alt="49. Bike">
+                    <p>49. Bike</p>
+                    <a href="https://youtu.be/AP91rA3Tzvs?si=IJkAQy_YoUwccIIO" target="_blank">Kanał YouTube</a>
+                </div>
+                <div class="centered">
+                    <img src="Prime/50. Bgc.png" alt="50. Bgc">
+                    <p>50. Bgc</p>
+                    <a href="https://youtu.be/vc_ele8suFY?si=WoEhriGYhCoW4emr" target="_blank">Kanał YouTube</a>
+                </div>
+            </div>
+        </section>
+        <section id="spike-essential">
+            <h2>Spike Essential</h2>
+            <p>Treść dotycząca Spike Essential</p>
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="essential/1. Crocodile.png" alt="Crocodile">
+        <div class="caption">1. Crocodile</div>
+        <a href="https://youtu.be/HB-npuVOBwg?si=PJ2njOFRLQE-qmco">Kanał YouTube</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/2. Horse.png" alt="Horse">
+        <div class="caption">2. Horse</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/3. Dancebot.png" alt="Dancebot">
+        <div class="caption">3. Dancebot</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/4. Tractor.png" alt="Tractor">
+        <div class="caption">4. Tractor</div>
+        <a class="youtube-link" href="https://youtu.be/QOSM8Zfj6RQ?si=RJ__Z4TNwwVfusef">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/5. Bunny.png" alt="Bunny">
+        <div class="caption">5. Bunny</div>
+        <a class="youtube-link" href="https://youtu.be/KB79bL4FcXU?si=twDoFS61QyFHf90t">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/6. Turning car.png" alt="Turning car">
+        <div class="caption">6. Turning car</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/7. Turtle.png" alt="Turtle">
+        <div class="caption">7. Turtle</div>
+        <a class="youtube-link" href="https://youtu.be/QOSM8Zfj6RQ?si=RJ__Z4TNwwVfusef">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/8. Bip-Bip.png" alt="Bip-Bip">
+        <div class="caption">8. Bip-Bip</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/9. Robo arm.png" alt="Robo arm">
+        <div class="caption">9. Robo arm</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/10. Dog.png" alt="Dog">
+        <div class="caption">10. Dog</div>
+        <a class="youtube-link" href="https://youtu.be/4etglUZdfk4?si=bm7sHVCTHMeKDuxy">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/11. Cleaner.png" alt="Cleaner">
+        <div class="caption">11. Cleaner</div>
+        <a class="youtube-link" href="https://youtu.be/nRuQ4gwEcIU?si=DbWwejY0mbGFihzy">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/12. Mech.png" alt="Mech">
+        <div class="caption">12. Mech</div>
+        <a class="youtube-link" href="https://youtu.be/_yU4jWEBeIk?si=04ebZ7CmtzSwlple">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/13. Wizard.png" alt="Wizard">
+        <div class="caption">13. Wizard</div>
+        <a class="youtube-link" href="https://youtu.be/aC_PouNS0E4?si=B9dBHvUpXSfiil9x">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/14. Crab.png" alt="Crab">
+        <div class="caption">14. Crab</div>
+        <a class="youtube-link" href="https://youtu.be/wDt6Uo3yFjk?si=v0VOFaeSZ928t927">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/15. Helicopter.png" alt="Helicopter">
+        <div class="caption">15. Helicopter</div>
+        <a class="youtube-link" href="https://youtu.be/lJeutZNMxE8?si=TajBhvKl0JDY6Ux1">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/16. Sorter colors.png" alt="Sorter colors">
+        <div class="caption">16. Sorter colors</div>
+        <a class="youtube-link" href="https://youtu.be/K0ZA4mBtj10?si=vrQNK6ksVmyIQvBB">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/17. Feris wheel.png" alt="Feris wheel">
+        <div class="caption">17. Feris wheel</div>
+        <a class="youtube-link" href="https://youtu.be/mNu46qjESrQ?si=llWu2_1HZPmKqT0p">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/18. Drawing robot.png" alt="Drawing robot">
+        <div class="caption">18. Drawing robot</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/19. Car control.png" alt="Car control">
+        <div class="caption">19. Car control</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/20. Viking boat.png" alt="Viking boat">
+        <div class="caption">20. Viking boat</div>
+        <a class="youtube-link" href="https://youtu.be/uL-QzSPxAQ8?si=rSFo6Zb0boexcGum">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/21. Spider.png" alt="Spider">
+        <div class="caption">21. Spider</div>
+        <a class="youtube-link" href="https://youtu.be/EXOE6blAKew?si=ZjCKsa2j5iYL_yRo">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/22. Parrot.png" alt="Parrot">
+        <div class="caption">22. Parrot</div>
+        <a class="youtube-link" href="https://youtu.be/7HDeqwkLZgY?si=CqZk8bFoaOeWOEW7">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/23. Santa's team.png" alt="Santa's team">
+        <div class="caption">23. Santa's team</div>
+        <a class="youtube-link" href="https://youtu.be/h7LOwtS4IZw?si=nHlE638343YTGutt">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/24. Scorpio.png" alt="Scorpio">
+        <div class="caption">24. Scorpio</div>
+        <a class="youtube-link" href="https://youtu.be/xMpuVyD9c88?si=NBRTtFdrmOFWEYOZ">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/25. Spirograph.png" alt="Spirograph">
+        <div class="caption">25. Spirograph</div>
+        <a class="youtube-link" href="https://youtu.be/Y_S374iOlok?si=8rfMek_IIF-DcSsU">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/26. Witch.png" alt="Witch">
+        <div class="caption">26. Witch</div>
+        <a class="youtube-link" href="https://youtu.be/Y5g0Yjac7YY?si=yELRW8GMNQwC-t5g">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/27. Bunny.png" alt="Bunny">
+        <div class="caption">27. Bunny</div>
+        <a class="youtube-link" href="https://youtu.be/J0xayhMuHCU?si=_GqbcElMniuIHrkP">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/28. Ballerina.png" alt="Ballerina">
+        <div class="caption">28. Ballerina</div>
+        <a class="youtube-link" href="https://youtu.be/EJDbKoLSBCk?si=-48CLzwhcxT41QIS">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/29. Beam balance.png" alt="Beam balance">
+        <div class="caption">29. Beam balance</div>
+        <a class="youtube-link" href="https://youtu.be/ldTRzo-xF6U?si=OVuucf8ZeEBiDcB5">YouTube Channel</a>
+    </div>
+    <div class="gallery-item">
+        <img src="essential/30. Game machine.png" alt="Game machine">
+        <div class="caption">30. Game machine</div>
+        <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+    </div>
+<div class="gallery-item">
+    <img src="essential/31. Skier.png" alt="Skier">
+    <div class="caption">31. Skier</div>
+    <a class="youtube-link" href="https://youtu.be/-CIAE_CwEAY?si=FZMKn9qwu7b4Ts7k">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/32. Helicopter.png" alt="Helicopter">
+    <div class="caption">32. Helicopter</div>
+    <a class="youtube-link" href="https://youtu.be/5zps6sysDZU?si=VkxmHb-2qQw6pQis">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/33. Dragster.png" alt="Dragster">
+    <div class="caption">33. Dragster</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/34. Mario.png" alt="Mario">
+    <div class="caption">34. Mario</div>
+    <a class="youtube-link" href="https://youtu.be/C-ekANP4DOM?si=1XUBCWE6ZcjN4w_L">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/35. Reef.png" alt="Reef">
+    <div class="caption">35. Reef</div>
+    <a class="youtube-link" href="https://youtu.be/Od6ZWIvo6YU?si=Kfhg1-f3Wo2yqxcS">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/36. Penguin.png" alt="Penguin">
+    <div class="caption">36. Penguin</div>
+    <a class="youtube-link" href="https://youtu.be/Zs4Zdss7qmo?si=8Hl_sM30H7_AHdJ3">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/37. Fishing.png" alt="Fishing">
+    <div class="caption">37. Fishing</div>
+    <a class="youtube-link" href="https://youtu.be/GzG3XWTnf-U?si=cmzbpDsCxgH-9VY8">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/38. Santa Claus.png" alt="Santa Claus">
+    <div class="caption">38. Santa Claus</div>
+    <a class="youtube-link" href="https://youtu.be/yWmYSaza33o?si=IexIkTu0Qfql4jxC">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/39. Monkey.png" alt="Monkey">
+    <div class="caption">39. Monkey</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/40. Skier.png" alt="Skier">
+    <div class="caption">40. Skier</div>
+    <a class="youtube-link" href="https://youtu.be/gLxGV9ql10I?si=uhAl8BjrtRSffNWj">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/41. Swing.png" alt="Swing">
+    <div class="caption">41. Swing</div>
+    <a class="youtube-link" href="https://youtu.be/deYDNRzisZQ?si=FQrhdI4cYeGCejzw">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/42. Koi fish.png" alt="Koi fish">
+    <div class="caption">42. Koi fish</div>
+    <a class="youtube-link" href="https://youtu.be/G1dGkrwCzqg?si=Orgl32syE99GnMZV">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/43. Catapult.png" alt="Catapult">
+    <div class="caption">43. Catapult</div>
+    <a class="youtube-link" href="https://youtu.be/HCuutciceWo?si=TcaAw_cjgMBD_OIW">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/44. Butterfly.png" alt="Butterfly">
+    <div class="caption">44. Butterfly</div>
+    <a class="youtube-link" href="https://youtu.be/wkvYV5MHodU?si=paDwP87kocv_aQdf">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/45. Transporter.png" alt="Transporter">
+    <div class="caption">45. Transporter</div>
+    <a class="youtube-link" href="https://youtu.be/BcVG0NXzSnQ?si=JReOnuctYNBY900y">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/46. Dump truck.png" alt="Dump truck">
+    <div class="caption">46. Dump truck</div>
+    <a class="youtube-link" href="https://youtu.be/gpuvXKkOeoY?si=9Hbb3ihjOpFTcBvL">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/47. Forklift.png" alt="Forklift">
+    <div class="caption">47. Forklift</div>
+    <a class="youtube-link" href="https://youtu.be/0-PI2ip7ufM?si=CQTxmF6EONbo8E1Z">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/48. Snowboard.png" alt="Snowboard">
+    <div class="caption">48. Snowboard</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/49. Box.png" alt="Box">
+    <div class="caption">49. Box</div>
+    <a class="youtube-link" href="https://youtu.be/ksklcDYQr-o?si=mQzHhTV3ctXg4cJe">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/50. Snake.png" alt="Snake">
+    <div class="caption">50. Snake</div>
+    <a class="youtube-link" href="https://youtu.be/Pdw8xEPxk18?si=adZN8Usd9IEyzaeU">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/51. Elephant.png" alt="Elephant">
+    <div class="caption">51. Elephant</div>
+    <a class="youtube-link" href="https://youtu.be/AyD04G7lz0g?si=QDZ4mBtOOaPFZN6o">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/52. Theater.png" alt="Theater">
+    <div class="caption">52. Theater</div>
+    <a class="youtube-link" href="https://youtu.be/zQCwOyJngR8?si=wHazGw-q9CdzgmKa">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/53. Garage.png" alt="Garage">
+    <div class="caption">53. Garage</div>
+    <a class="youtube-link" href="https://youtu.be/mZ3FHFGrzbE?si=eqv0Da9jS8zabG9d">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/54. Reindeer.png" alt="Reindeer">
+    <div class="caption">54. Reindeer</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/55. Swing.png" alt="Swing">
+    <div class="caption">55. Swing</div>
+    <a class="youtube-link" href="https://youtu.be/5qf67v_v1Po?si=oOPhjMJ2UytKMgob">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/56. Easter egg machine.png" alt="Easter egg machine">
+    <div class="caption">56. Easter egg machine</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/57. Space station.png" alt="Space station">
+    <div class="caption">57. Space station</div>
+    <a class="youtube-link" href="https://youtu.be/YP65m18Gmxo?si=iK8uB25JrmeBdjAp">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/58. Goalkeeper.png" alt="Goalkeeper">
+    <div class="caption">58. Goalkeeper</div>
+    <a class="youtube-link" href="https://youtu.be/h6x01dhZT2E?si=2mkfNT4nhlNOo9UG">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/59. Crane.png" alt="Crane">
+    <div class="caption">59. Crane</div>
+    <a class="youtube-link" href="https://youtu.be/I_EA8joa3R0?si=iGOXYZdqrVZ9CGOl">YouTube Channel</a>
+
+</div>
+<div class="gallery-item">
+    <img src="essential/60. Magic carpet.png" alt="Magic carpet">
+    <div class="caption">60. Magic carpet</div>
+    <a class="youtube-link" href="https://youtu.be/ScCVaE5eNqc?si=QYhAIGoV-IbbWLgO">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/61. Bird.png" alt="Bird">
+    <div class="caption">61. Bird</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/62. Shark.png" alt="Shark">
+    <div class="caption">62. Shark</div>
+    <a class="youtube-link" href="https://youtu.be/bRgDBPXAfOg?si=864UoQswFOO4lMTR">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/63. Crossbow.png" alt="Crossbow">
+    <div class="caption">63. Crossbow</div>
+    <a class="youtube-link" href="https://youtu.be/oz6Nu2YpT3w?si=uaaCP6zUL2mRX8CZ">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/64. Electronic dice.png" alt="Electronic dice">
+    <div class="caption">64. Electronic dice</div>
+    <a class="youtube-link" href="https://youtu.be/P3yi-F8avEM?si=riN8Klwp2qJRUOJL">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/65. Gnome.png" alt="Gnome">
+    <div class="caption">65. Gnome</div>
+    <a class="youtube-link" href="https://youtu.be/7bpLIliSOdA?si=5Bf7RVLnTO_YAPek">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/66. Motorbike.png" alt="Motorbike">
+    <div class="caption">66. Motorbike</div>
+    <a class="youtube-link" href="https://youtu.be/LwEzofLWPSY?si=BqB6MbQOK9IqbYAM">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/67. BGC.png" alt="BGC">
+    <div class="caption">67. BGC</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/68. Footballer.png" alt="Footballer">
+    <div class="caption">68. Footballer</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/69. Halloween.png" alt="Halloween">
+    <div class="caption">69. Halloween</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/70. Safe.png" alt="Safe">
+    <div class="caption">70. Safe</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/71. Plane.png" alt="Plane">
+    <div class="caption">71. Plane</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/72. Skier.png" alt="Skier">
+    <div class="caption">72. Skier</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/73. Horce race.png" alt="Horce race">
+    <div class="caption">73. Horce race</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/74. Christmas.png" alt="Christmas">
+    <div class="caption">74. Christmas</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/75. Harvester.png" alt="Harvester">
+    <div class="caption">75. Harvester</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/76. Santa race.png" alt="Santa race">
+    <div class="caption">76. Santa race</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/77. Dinosaur.png" alt="Dinosaur">
+    <div class="caption">77. Dinosaur</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/78. Giraffe.png" alt="Giraffe">
+    <div class="caption">78. Giraffe</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/79. Locomotive.png" alt="Locomotive">
+    <div class="caption">79. Locomotive</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/80. Plane.png" alt="Plane">
+    <div class="caption">80. Plane</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+<div class="gallery-item">
+    <img src="essential/81. Jumping rope.png" alt="Jumping rope">
+    <div class="caption">81. Jumping rope</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/82. Metal detector.png" alt="Metal detector">
+    <div class="caption">82. Metal detector</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+<div class="gallery-item">
+    <img src="essential/83. Earthquake.png" alt="Earthquake">
+    <div class="caption">83. Earthquake</div>
+    <a class="youtube-link" href="https://www.youtube.com/channel/yourchannel">YouTube Channel</a>
+</div>
+
+
+</div>
+
+        </section>
+        <section id="spike-essential-przedszkola">
+            <h2>Spike Essential - Przedszkola</h2>
+            <p>Treść dotycząca Spike Essential dla przedszkoli</p>
+        </section>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Treść dotycząca kontaktu</p>
+        </section>
+    </div>
+</body>
+</html>
